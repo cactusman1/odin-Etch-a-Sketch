@@ -1,0 +1,13 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+#container {
+    outline: 2px solid;
+    width: 960px;
+    height: 960px;
+}
+.cell {
+    outline: 2px solid;
+    display: inline-block;
+}
