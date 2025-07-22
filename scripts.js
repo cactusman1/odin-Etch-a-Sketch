@@ -13,9 +13,12 @@ function createGrid(x) {
 }
 createGrid(16);
 
-const cells = document.querySelectorAll(".cell");
-for (let i = 0; i <= cell.length; i++) {
-    cells.addEventListener("mouseover", () => {
-        cell.setAttribute("style", "background-color:Green");
-    });
-}
+const cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
+cells.forEach(cell => { //
+    cell.addEventListener("mouseover", () => {
+        cell.style.backgroundColor = "green";
+    })
+    cell.addEventListener("mouseout", () => {
+        cell.style.backgroundColor = "white";
+    })
+})
