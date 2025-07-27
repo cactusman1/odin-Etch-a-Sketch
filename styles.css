@@ -1,13 +1,30 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    background-color: beige;
+}
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 #container {
     outline: 2px solid;
     width: 960px;
-    height: 960px;
+    /* height: 540px; */
+    justify-self: flex-end;
+    padding: 20px;
 }
 .cell {
     outline: 2px solid;
     display: inline-block;
+}
+
+.butt {
+    display: block;
+    width: 200px;
+    width: 200px;
+    margin-bottom: 5px;
+    background-color: red;
+
 }

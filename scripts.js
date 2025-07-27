@@ -1,24 +1,42 @@
 const grid = document.querySelector("#container");
 
-function createGrid(x) {
+function createGrid(x) { //x = number of rows and columns 
     for (rows = 0; rows < x; rows++) {
         for (columns = 0; columns < x; columns++) {
             const cell = document.createElement("div");
             grid.appendChild(cell).className = "cell";
-            cell.setAttribute("style", "height:60px;width:60px")
+            cell.setAttribute("style", `height:${540 / x}px;width:${960 / x}px`)
 
         }
     }
-
-}
+};
 createGrid(16);
 
-const cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
-cells.forEach(cell => { //
+
+let cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
+cells.forEach(cell => { //loops over every "cell" in the nodeList
     cell.addEventListener("mouseover", () => {
-        cell.style.backgroundColor = "green";
+        cell.style.backgroundColor = "red";
     })
-    cell.addEventListener("mouseout", () => {
-        cell.style.backgroundColor = "white";
+});
+
+const btn = document.querySelector(".butt");
+btn.addEventListener("click", () => { //Once again this loops over every cell in the nodeList 
+    cells.forEach(cell => {           // and removes them from the parent individually
+        grid.removeChild(cell);
+
     })
-})
+    
+    let newGridDimensions = prompt("How many boxes would you like per side?");
+    createGrid(newGridDimensions);
+
+    cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
+    cells.forEach(cell => { //loops over every "cell" in the nodeList
+        cell.addEventListener("mouseover", () => {
+            cell.style.backgroundColor = "red";
+        })
+
+    });
+
+});
+
