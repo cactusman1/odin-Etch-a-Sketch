@@ -3,12 +3,15 @@ const grid = document.querySelector("#container");
 function createGrid(x) { //x = number of rows and columns
     if (isNaN(x)) {
         alert("This isn't a number.");
+        getInput();
     }
     else if (x < 1) {
         alert("This number is too small");
+        getInput();
     }
     else if (x > 64) {
         alert("This number is too large");
+        getInput();
     }
     else {
         for (rows = 0; rows < x; rows++) {
@@ -22,12 +25,17 @@ function createGrid(x) { //x = number of rows and columns
     }
 };
 createGrid(16);
-
+function getInput() {
+    let newGridDimensions = prompt("How many boxes would you like per side?(1-64)");
+}
 
 let cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
 cells.forEach(cell => { //loops over every "cell" in the nodeList
     cell.addEventListener("mouseover", () => {
-        cell.style.backgroundColor = "red";
+        let randomRed = Math.floor(Math.random() * 256);
+        let randomBlue = Math.floor(Math.random() * 256);
+        let randomGreen = Math.floor(Math.random() * 256);
+        cell.style.backgroundColor = `rgb(${randomRed}, ${randomBlue}, ${randomGreen})`;
     })
 });
 
@@ -38,16 +46,22 @@ btn.addEventListener("click", () => { //Once again this loops over every cell in
 
     })
 
-    let newGridDimensions = prompt("How many boxes would you like per side?(1-64)");
-    createGrid(newGridDimensions);
+
+    createGrid(getInput());
 
     cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
     cells.forEach(cell => { //loops over every "cell" in the nodeList
         cell.addEventListener("mouseover", () => {
-            cell.style.backgroundColor = "red";
+            let randomRed = Math.floor(Math.random() * 256);
+            let randomBlue = Math.floor(Math.random() * 256);
+            let randomGreen = Math.floor(Math.random() * 256);
+            cell.style.backgroundColor = `rgb(${randomRed}, ${randomBlue}, ${randomGreen})`;
         })
 
     });
 
 });
 
+function createRandomColor() {
+
+}
