@@ -1,16 +1,16 @@
 const grid = document.querySelector("#container");
 
 function createGrid(x) { //x = number of rows and columns
-    if (isNaN(x)) {
-        alert("This isn't a number.");
-        getInput();
-    }
-    else if (x < 1) {
+    if (x < 1) {
         alert("This number is too small");
         getInput();
     }
     else if (x > 64) {
         alert("This number is too large");
+        getInput();
+    }
+    else if (isNaN(x)) {
+        alert("This isn't a number.");
         getInput();
     }
     else {
@@ -26,7 +26,8 @@ function createGrid(x) { //x = number of rows and columns
 };
 createGrid(16);
 function getInput() {
-    let newGridDimensions = prompt("How many boxes would you like per side?(1-64)");
+    let newGridDimensions = parseInt(prompt("How many boxes would you like per side?(1-64)"));
+    return newGridDimensions;
 }
 
 let cells = document.querySelectorAll(".cell"); // this'll return every "cell" as NodeList
@@ -62,6 +63,9 @@ btn.addEventListener("click", () => { //Once again this loops over every cell in
 
 });
 
-function createRandomColor() {
-
+function increaseOpacity() {
+    let opacity = 0;
+    for (let i = 0; i <= 10; i++) {
+        opacity += 0.1
+    }
 }
