@@ -36,7 +36,9 @@ cells.forEach(cell => { //loops over every "cell" in the nodeList
         let randomRed = Math.floor(Math.random() * 256);
         let randomBlue = Math.floor(Math.random() * 256);
         let randomGreen = Math.floor(Math.random() * 256);
-        cell.style.backgroundColor = `rgb(${randomRed}, ${randomBlue}, ${randomGreen})`;
+        let opacity = 0;
+        opacity = opacity + 10;
+        cell.style.backgroundColor = `rgba(${randomRed}, ${randomBlue}, ${randomGreen}, ${opacity})`;
     })
 });
 
@@ -63,9 +65,3 @@ btn.addEventListener("click", () => { //Once again this loops over every cell in
 
 });
 
-function increaseOpacity() {
-    let opacity = 0;
-    for (let i = 0; i <= 10; i++) {
-        opacity += 0.1
-    }
-}

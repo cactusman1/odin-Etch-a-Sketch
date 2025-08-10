@@ -16,7 +16,7 @@ h1{
     padding: 20px;
 }
 .cell {
-    outline: 2px solid;
+    /* outline: 2px solid; */
     display: inline-block;
 }
 
